@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AlertBoxController" customModule="Network_Response_Cache_URLSession_Example" customModuleProvider="target">
+            <connections>
+                <outlet property="actionStackView" destination="POK-ow-WHT" id="c3s-9y-X2h"/>
+                <outlet property="baseContainerView" destination="rBy-DQ-KuP" id="Sli-C9-2WL"/>
+                <outlet property="descriptionLabel" destination="uAW-cb-F2o" id="fcX-cM-xaK"/>
+                <outlet property="titleLabel" destination="f5F-rc-Jm9" id="Loq-dx-ijQ"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rBy-DQ-KuP">
+                    <rect key="frame" x="30" y="313.66666666666669" width="333" height="225.00000000000006"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f5F-rc-Jm9">
+                            <rect key="frame" x="12" y="12.000000000000002" width="309" height="21.666666666666671"/>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="12" baselineAdjustment="alignBaselines" minimumFontSize="8" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uAW-cb-F2o">
+                            <rect key="frame" x="12" y="45.666666666666622" width="309" height="125.33333333333331"/>
+                            <string key="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries</string>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="POK-ow-WHT">
+                            <rect key="frame" x="12" y="183" width="309" height="30"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ub-qb-JJv">
+                                    <rect key="frame" x="0.0" y="0.0" width="309" height="30"/>
+                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                    <state key="normal" title="Dismiss"/>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="uAW-cb-F2o" firstAttribute="trailing" secondItem="f5F-rc-Jm9" secondAttribute="trailing" id="1sd-bM-08g"/>
+                        <constraint firstItem="uAW-cb-F2o" firstAttribute="top" secondItem="f5F-rc-Jm9" secondAttribute="bottom" constant="12" id="22D-78-4zL"/>
+                        <constraint firstAttribute="height" relation="lessThanOrEqual" constant="400" id="4xd-tz-lY9"/>
+                        <constraint firstAttribute="trailing" secondItem="f5F-rc-Jm9" secondAttribute="trailing" constant="12" id="BiS-zZ-1n1"/>
+                        <constraint firstItem="f5F-rc-Jm9" firstAttribute="top" secondItem="rBy-DQ-KuP" secondAttribute="top" constant="12" id="ElK-nN-tE4"/>
+                        <constraint firstAttribute="bottom" secondItem="POK-ow-WHT" secondAttribute="bottom" constant="12" id="GnW-QI-UPg"/>
+                        <constraint firstItem="POK-ow-WHT" firstAttribute="trailing" secondItem="uAW-cb-F2o" secondAttribute="trailing" id="MIS-eX-JkX"/>
+                        <constraint firstItem="f5F-rc-Jm9" firstAttribute="leading" secondItem="rBy-DQ-KuP" secondAttribute="leading" constant="12" id="iCu-SZ-R4p"/>
+                        <constraint firstItem="uAW-cb-F2o" firstAttribute="leading" secondItem="f5F-rc-Jm9" secondAttribute="leading" id="piZ-wj-LcP"/>
+                        <constraint firstItem="POK-ow-WHT" firstAttribute="top" secondItem="uAW-cb-F2o" secondAttribute="bottom" constant="12" id="t0Z-RP-009"/>
+                        <constraint firstItem="POK-ow-WHT" firstAttribute="leading" secondItem="uAW-cb-F2o" secondAttribute="leading" id="x7l-Xg-Szu"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rBy-DQ-KuP" secondAttribute="trailing" constant="30" id="Usf-4Q-BIh"/>
+                <constraint firstItem="rBy-DQ-KuP" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="fUo-Jy-lab"/>
+                <constraint firstItem="rBy-DQ-KuP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="tAa-xD-Oiw"/>
+            </constraints>
+            <point key="canvasLocation" x="139.69465648854961" y="20.422535211267608"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

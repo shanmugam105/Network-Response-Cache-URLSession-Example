@@ -22,6 +22,8 @@
 		5A119AAC29F1A54F00A4E39E /* PostDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A119AAA29F1A54F00A4E39E /* PostDetail.swift */; };
 		5A119AB029F1A57900A4E39E /* UserDetailsNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A119AAE29F1A57900A4E39E /* UserDetailsNetworkService.swift */; };
 		5A119AB129F1A57900A4E39E /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A119AAF29F1A57900A4E39E /* UsersViewModel.swift */; };
+		5A119AB329F2B64400A4E39E /* AlertBoxController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5A119AB229F2B64400A4E39E /* AlertBoxController.swift */; };
+		5A119AB929F2BC3200A4E39E /* AlertBoxController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5A119AB829F2BC3200A4E39E /* AlertBoxController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		5A119AAA29F1A54F00A4E39E /* PostDetail.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostDetail.swift; sourceTree = "<group>"; };
 		5A119AAE29F1A57900A4E39E /* UserDetailsNetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDetailsNetworkService.swift; sourceTree = "<group>"; };
 		5A119AAF29F1A57900A4E39E /* UsersViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
+		5A119AB229F2B64400A4E39E /* AlertBoxController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertBoxController.swift; sourceTree = "<group>"; };
+		5A119AB829F2BC3200A4E39E /* AlertBoxController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlertBoxController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 				5A119AAD29F1A57900A4E39E /* ViewModel */,
 				5A119A9729F1A31400A4E39E /* ViewController */,
 				5A119A9629F1A2F700A4E39E /* Storyboard */,
+				5A119ABA29F2BC4000A4E39E /* AlertBoxController */,
 				5A119A9529F1A29500A4E39E /* Global */,
 			);
 			path = "Network-Response-Cache-URLSession-Example";
@@ -166,6 +171,15 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		5A119ABA29F2BC4000A4E39E /* AlertBoxController */ = {
+			isa = PBXGroup;
+			children = (
+				5A119AB829F2BC3200A4E39E /* AlertBoxController.xib */,
+				5A119AB229F2B64400A4E39E /* AlertBoxController.swift */,
+			);
+			path = AlertBoxController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -224,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A119AB929F2BC3200A4E39E /* AlertBoxController.xib in Resources */,
 				5A119A8E29F1A24500A4E39E /* LaunchScreen.storyboard in Resources */,
 				5A119A8B29F1A24500A4E39E /* Assets.xcassets in Resources */,
 				5A119A8929F1A24200A4E39E /* Main.storyboard in Resources */,
@@ -237,6 +252,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5A119AB329F2B64400A4E39E /* AlertBoxController.swift in Sources */,
 				5A119AB029F1A57900A4E39E /* UserDetailsNetworkService.swift in Sources */,
 				5A119AB129F1A57900A4E39E /* UsersViewModel.swift in Sources */,
 				5A119AA329F1A52600A4E39E /* LocalErrors.swift in Sources */,

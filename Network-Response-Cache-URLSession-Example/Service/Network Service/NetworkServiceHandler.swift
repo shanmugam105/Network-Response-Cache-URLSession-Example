@@ -15,8 +15,10 @@ class NetworkServiceHandler: NSObject {
                              parameter: [String: Any]? = nil,
                              type: T.Type,
                              completion: @escaping (Result<T, Error>) -> Void) {
-        let request = createRequest(route: route, method: method, parameter: parameter)
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+        var request = createRequest(route: route, method: method, parameter: parameter)
+        let config = URLSessionConfiguration.default
+        let session = URLSession(configuration: config)
+        let task = session.dataTask(with: request) { data, response, error in
             if let data = data {
                 guard let result = try? JSONDecoder().decode(type, from: data) else{
                     return completion(.failure(LocalError.parsingError))
@@ -43,6 +45,7 @@ class NetworkServiceHandler: NSObject {
         let url = URL(string: urlString)!
         var urlRequest = URLRequest(url: url)
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.addValue("private", forHTTPHeaderField: "Cache-Control")
         urlRequest.httpMethod = method.rawValue
         
         if let params = parameter {
@@ -62,6 +65,16 @@ class NetworkServiceHandler: NSObject {
     }
 }
 
-extension NetworkServiceHandler: URLSessionDelegate {
-    
-}
+/* extension NetworkServiceHandler: URLSessionDataDelegate {
+    func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, willCacheResponse proposedResponse: CachedURLResponse, completionHandler: @escaping (CachedURLResponse?) -> Void) {
+        if proposedResponse.response.url?.scheme == "https" {
+            let updatedResponse = CachedURLResponse(response: proposedResponse.response,
+                                                    data: proposedResponse.data,
+                                                    userInfo: proposedResponse.userInfo,
+                                                    storagePolicy: .allowedInMemoryOnly)
+            completionHandler(updatedResponse)
+        } else {
+            completionHandler(proposedResponse)
+        }
+    }
+} */

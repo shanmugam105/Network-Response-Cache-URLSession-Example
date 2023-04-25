@@ -11,10 +11,19 @@ class HomeViewController: UITableViewController {
     let getUserDetails: UsersViewModel = .init()
     override func viewDidLoad() {
         super.viewDidLoad()
-        getUserDetails()
+        refreshControl = UIRefreshControl()
+        refreshControl?.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        refreshControl?.addTarget(self, action: #selector(self.refresh), for: .valueChanged)
+        tableView.addSubview(refreshControl!)
+        getUserDetails(cache: true)
         getUserDetails.userListCompletion = { error in
             if error == nil { self.tableView.reloadData() }
+            self.refreshControl?.endRefreshing()
         }
+    }
+    
+    @objc func refresh(_ sender: AnyObject) {
+        getUserDetails(cache: false)
     }
 }
 

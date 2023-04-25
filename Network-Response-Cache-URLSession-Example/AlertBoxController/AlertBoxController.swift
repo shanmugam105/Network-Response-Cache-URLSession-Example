@@ -13,6 +13,14 @@ extension UIView {
     }
 }
 
+extension UIStackView {
+    func clearItems() {
+        self.subviews.forEach { view in
+            view.removeFromSuperview()
+        }
+    }
+}
+
 struct AlertBoxAction {
     
 }
@@ -23,8 +31,12 @@ class AlertBoxController: UIViewController {
     @IBOutlet weak var baseContainerView: UIView!
     @IBOutlet weak var descriptionLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
+    private var alertTitle: String?
+    private var alertDescription: String?
     
-    init() {
+    init(title: String? = nil, description: String? = nil) {
+        self.alertTitle = title
+        self.alertDescription = description
         super.init(
             nibName: String(describing: AlertBoxController.self),
             bundle: Bundle(for: AlertBoxController.self)
@@ -37,6 +49,7 @@ class AlertBoxController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        baseContainerView.cornerRadius()
+        actionStackView.clearItems()
     }
 }

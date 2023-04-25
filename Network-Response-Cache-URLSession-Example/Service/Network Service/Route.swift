@@ -9,7 +9,7 @@
 import Foundation
 
 enum Route {
-    static let baseURL = "https://jsonplaceholder.typicode.com/"
+    static let baseURL = "https://6446ae39ee791e1e29063b0f.mockapi.io/url-session/" // "https://jsonplaceholder.typicode.com/"
     case user
     case defaultImageAddress
     case posts

@@ -8,6 +8,6 @@
 import Foundation
 
 protocol UserDetailsProtocol: NetworkServiceHandler {
-    func makeRequestForUserList(completion: @escaping (Result<[User], Error>) -> Void)
+    func makeRequestForUserList(cache: Bool, completion: @escaping (Result<[User], Error>) -> Void)
     func makeRequestForUserBlogPost(parameter: [String: Any]?, completion: @escaping (Result<PostDetail, Error>) -> Void)
 }

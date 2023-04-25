@@ -13,10 +13,12 @@ class NetworkServiceHandler: NSObject {
     func request<T: Codable>(route: Route,
                              method: HTTPMethod = .GET,
                              parameter: [String: Any]? = nil,
+                             cache: Bool,
                              type: T.Type,
                              completion: @escaping (Result<T, Error>) -> Void) {
-        var request = createRequest(route: route, method: method, parameter: parameter)
+        let request = createRequest(route: route, method: method, parameter: parameter)
         let config = URLSessionConfiguration.default
+        config.requestCachePolicy = cache ? .returnCacheDataElseLoad : .useProtocolCachePolicy
         let session = URLSession(configuration: config)
         let task = session.dataTask(with: request) { data, response, error in
             if let data = data {
@@ -45,7 +47,7 @@ class NetworkServiceHandler: NSObject {
         let url = URL(string: urlString)!
         var urlRequest = URLRequest(url: url)
         urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
-        urlRequest.addValue("private", forHTTPHeaderField: "Cache-Control")
+        // urlRequest.addValue("private", forHTTPHeaderField: "Cache-Control")
         urlRequest.httpMethod = method.rawValue
         
         if let params = parameter {
@@ -65,7 +67,7 @@ class NetworkServiceHandler: NSObject {
     }
 }
 
-/* extension NetworkServiceHandler: URLSessionDataDelegate {
+extension NetworkServiceHandler: URLSessionDataDelegate {
     func urlSession(_ session: URLSession, dataTask: URLSessionDataTask, willCacheResponse proposedResponse: CachedURLResponse, completionHandler: @escaping (CachedURLResponse?) -> Void) {
         if proposedResponse.response.url?.scheme == "https" {
             let updatedResponse = CachedURLResponse(response: proposedResponse.response,
@@ -77,4 +79,4 @@ class NetworkServiceHandler: NSObject {
             completionHandler(proposedResponse)
         }
     }
-} */
+}

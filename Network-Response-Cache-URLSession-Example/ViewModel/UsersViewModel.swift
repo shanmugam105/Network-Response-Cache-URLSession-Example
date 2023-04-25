@@ -14,8 +14,8 @@ final class UsersViewModel {
     // Blog Post
     var details: PostDetail?
     var blogPostDetailsCompletion: ((Error?) -> Void)?
-    func callAsFunction() {
-        networkManager.makeRequestForUserList { result in
+    func callAsFunction(cache: Bool) {
+        networkManager.makeRequestForUserList(cache: cache) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let users):

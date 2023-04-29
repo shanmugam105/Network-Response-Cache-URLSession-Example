@@ -16,6 +16,7 @@
                 <outlet property="descriptionLabel" destination="uAW-cb-F2o" id="fcX-cM-xaK"/>
                 <outlet property="titleLabel" destination="f5F-rc-Jm9" id="Loq-dx-ijQ"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="visualEffectView" destination="7z1-Iu-LNn" id="dL7-i1-NWY"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -23,6 +24,14 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7z1-Iu-LNn">
+                    <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="0k1-3p-Wuw">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                    </view>
+                    <blurEffect style="regular"/>
+                </visualEffectView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rBy-DQ-KuP">
                     <rect key="frame" x="30" y="313.66666666666669" width="333" height="225.00000000000006"/>
                     <subviews>
@@ -69,9 +78,13 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="7z1-Iu-LNn" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="Jba-cG-iqe"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="rBy-DQ-KuP" secondAttribute="trailing" constant="30" id="Usf-4Q-BIh"/>
+                <constraint firstItem="7z1-Iu-LNn" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="df7-U8-Yha"/>
                 <constraint firstItem="rBy-DQ-KuP" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="fUo-Jy-lab"/>
+                <constraint firstAttribute="bottom" secondItem="7z1-Iu-LNn" secondAttribute="bottom" id="hIp-Qb-Hve"/>
                 <constraint firstItem="rBy-DQ-KuP" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="tAa-xD-Oiw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="7z1-Iu-LNn" secondAttribute="trailing" id="y0e-W5-Qfl"/>
             </constraints>
             <point key="canvasLocation" x="139.69465648854961" y="20.422535211267608"/>
         </view>

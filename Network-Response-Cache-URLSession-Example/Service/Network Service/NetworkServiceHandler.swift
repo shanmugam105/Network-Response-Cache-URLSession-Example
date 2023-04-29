@@ -21,6 +21,7 @@ class NetworkServiceHandler: NSObject {
         config.requestCachePolicy = cache ? .returnCacheDataElseLoad : .useProtocolCachePolicy
         let session = URLSession(configuration: config)
         let task = session.dataTask(with: request) { data, response, error in
+            print("Response =>", response)
             if let data = data {
                 guard let result = try? JSONDecoder().decode(type, from: data) else{
                     return completion(.failure(LocalError.parsingError))

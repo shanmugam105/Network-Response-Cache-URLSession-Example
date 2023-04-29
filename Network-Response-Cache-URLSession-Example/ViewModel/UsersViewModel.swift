@@ -23,6 +23,7 @@ final class UsersViewModel {
                     self.userListCompletion?(nil)
                 case .failure(let error):
                     print("Error: \(error)")
+                    self.users = []
                     self.userListCompletion?(error)
                 }
             }
